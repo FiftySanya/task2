@@ -228,4 +228,40 @@
 - Стек починається з вищих адрес і зростає вниз (зменшення адреси при додаванні локальних змінних).
 - Купа (heap) — після stack.
 
+## Завдання 4: Дослідження стека процесу
+
+### Опис
+Завдання полягає в аналізі стека процесу за допомогою утиліт gstack або GDB. Використовується тестова програма з вкладеними викликами функцій, яка блокується на системному виклику pause() для зручності аналізу.
+
+### Команди для компіляції
+- ```bash
+  gcc -Wall -g task4.c -o task4
+  ```
+
+### 1. Запуск програми
+- ```bash
+  ./task4
+    In function                 main; &localvar = 0x820e04a0c
+    In function                  foo; &localvar = 0x820e049dc
+    In function                  bar; &localvar = 0x820e049bc
+    In function    bar_is_now_closed; &localvar = 0x820e0499c
+    Now blocking on pause()...
+  ```
+
+### 2. Аналіз стека за допомогою GDB
+- ```bash
+  gdb -p 3060
+  (gdb) bt
+    #0  0x0000000822b4d77a in _sigsuspend () from /lib/libc.so.7
+    #1  0x0000000822ac3c35 in pause () from /lib/libc.so.7
+    #2  0x000000000040068b in bar_is_now_closed () at task4.c:11
+    #3  0x00000000004006bd in bar () at task4.c:17
+    #4  0x00000000004006ef in foo () at task4.c:23
+    #5  0x0000000000400728 in main (argc=1, argv=0x820c259f0) at task4.c:29
+  ```
+
+### Висновки
+- GDB дозволяє дослідити, на якому саме системному виклику заблокувався процес (наприклад, pause()), що корисно для діагностики зависань.
+- gstack утиліти не існує на FreeBSD
+
 
