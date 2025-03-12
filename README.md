@@ -94,34 +94,26 @@
 ### Команди для компіляції
 - Базова компіляція:
 ```bash
-gcc -o hello hello.c
+gcc -Wall task2.c -o task2
 ```
 - З увімкненим налагодженням:
 ```bash
-gcc -g -o hello hello.c
+gcc -Wall -g task2.c -o task2
 ```
 - З оптимізацією:
 ```bash
-gcc -O3 -o hello hello.c
+gcc -Wall -O3 task2.c -o task2
 ```
 
-### Приклади виведення
-
-### 1. Базова програма "Hello, World"
-* Перевірка розміру файлу:
+### 1. Базова програма "Hello, world!"
 ```bash
-ls -l hello
+ls -l task2
+-rwxr-xr-x  1 root wheel 8200 Mar 12 01:00 task2
 ```
-```text
--rwxr-xr-x 1 user wheel 16384 Oct 10 12:00 hello
 ```
-* Перевірка розмірів сегментів:
-```bash
-size hello
-```
-```text
- text    data     bss     dec     hex filename
- 2288     544      16    2848     b20 hello
+size task2
+  text   data   bss    dec     hex   filename
+  1079    552    16   1647   0x66f   task2
 ```
 
 ### 2. Додавання неініціалізованого глобального масиву з 1000 int
