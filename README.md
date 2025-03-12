@@ -106,15 +106,15 @@
   ```
 
 ### 1. Базова програма "Hello, world!"
-  ```bash
-  ls -l task2
-  -rwxr-xr-x  1 root wheel 8200 Mar 12 01:00 task2
-  ```
-  ```
-  size task2
-    text   data   bss    dec     hex   filename
-    1079    552    16   1647   0x66f   task2
-  ```
+    ```bash
+    ls -l task2
+    -rwxr-xr-x  1 root wheel 8200 Mar 12 01:00 task2
+    ```
+    ```
+    size task2
+      text   data   bss    dec     hex   filename
+      1079    552    16   1647   0x66f   task2
+    ```
 
 ### 2. Додавання неініціалізованого глобального масиву з 1000 int
   ```bash
