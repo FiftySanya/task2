@@ -106,26 +106,28 @@
   ```
 
 ### 1. Базова програма "Hello, world!"
-    ```bash
-    ls -l task2
-    -rwxr-xr-x  1 root wheel 8200 Mar 12 01:00 task2
-    ```
-    ```
-    size task2
-      text   data   bss    dec     hex   filename
-      1079    552    16   1647   0x66f   task2
-    ```
+-
+```bash
+ls -l task2
+-rwxr-xr-x  1 root wheel 8200 Mar 12 01:00 task2
+```
+```
+size task2
+  text   data   bss    dec     hex   filename
+  1079    552    16   1647   0x66f   task2
+```
 
 ### 2. Додавання неініціалізованого глобального масиву з 1000 int
-  ```bash
-  ls -l task2
-  -rwxr-xr-x  1 root wheel 8240 Mar 12 01:18 task2
-  ```
-  ```text
-  size task2
-    text   data    bss    dec      hex   filename
-    1079    552   4032   5663   0x161f   task2
-  ```
+-
+```bash
+ls -l task2
+-rwxr-xr-x  1 root wheel 8240 Mar 12 01:18 task2
+```
+```text
+size task2
+  text   data    bss    dec      hex   filename
+  1079    552   4032   5663   0x161f   task2
+```
 - Сегмент bss збільшився на 1000 × 4 = 4000 байт + вирівнювання пам'яті: На 64-бітних системах часто застосовується вирівнювання даних для оптимізації доступу. Компілятор міг вирівняти масив до 16-байтної межі, що додало б 16 байт (з 4000 до 4016).
 
 ### 3. Ініціалізація глобального масиву
