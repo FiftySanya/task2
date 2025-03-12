@@ -39,17 +39,17 @@
 
 ### Аналіз сегментів виконуваного файлу для програми дослідження максимальних значень time_t
 - 32-бітна компіляція
-```
-size task1
-  text   data   bss    dec     hex   filename
-  1330    288     8   1626   0x65a   task1
-```
+  ```
+  size task1
+    text   data   bss    dec     hex   filename
+    1330    288     8   1626   0x65a   task1
+  ```
 - 64-бітна компіляція
-```
-size task1
-  text   data   bss    dec     hex   filename
-  1512    576    16   2104   0x838   task1
-```
+  ```
+  size task1
+    text   data   bss    dec     hex   filename
+    1512    576    16   2104   0x838   task1
+  ```
 
 | Сегмент | 32-бітна версія | 64-бітна версія | Різниця |
 |---------|-----------------|-----------------|---------|
